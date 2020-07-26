@@ -10,7 +10,7 @@ cat : Category[];
 
   public getCategory(){
     console.log("in service getCategory()");
-    const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
+    //const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
     return this.httpService.get<Category>("http://localhost:8765/bookstore/GetAllCategory");
   }
 id:number;

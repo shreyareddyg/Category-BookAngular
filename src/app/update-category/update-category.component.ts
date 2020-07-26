@@ -29,9 +29,14 @@ export class UpdateCategoryComponent implements OnInit {
     console.log(this.cid);
     console.log(uc.categoryName);
     this.myservice.onUpdateCategory(this.cid,uc.categoryName).subscribe(data=>{
+      return this.router.navigate(['/ListCategories']);
+    },
+    (err) => {
       
-    });
-    return this.router.navigate(['/ListCategories']);
+      alert("Category Name already exists!!");
+    }
+    );
+    
   }
 
 }
