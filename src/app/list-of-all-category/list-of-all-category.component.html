@@ -1,0 +1,38 @@
+<div class="container-fluid">
+
+
+    <h1 align="center" routerLink="/CreateCategory">Create New Category</h1>
+    <table class="table table-striped" *ngIf="cat && cat.length > 0  else elseBlock">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th> ID</th>
+                <th>Category Name</th>
+                <th colspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of (cat | orderByName) ; let i = index">
+                <td>{{i  + 1}}</td>
+                <td>{{c.categoryId}}</td>
+                <td>{{c.categoryName}}</td>
+                <td>
+                    <button type="button" class="btn btn-small btn-block btn-secondary"
+                        (click)=update(c.categoryId)>Edit </button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-small btn-block btn-danger"
+                        (click)=delete(c.categoryId)>Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <ng-template #elseBlock>
+        <h4 align="center"> There are no Categories to display! </h4>
+    </ng-template>
+</div>
+
+<div class="alert alert-danger " *ngIf="message">
+    <a href="http://localhost:4200/ListCategories" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Alert!</strong> Can not Delete Category as it contains Books!
+</div>
