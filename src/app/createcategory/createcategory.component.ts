@@ -27,7 +27,7 @@ Category: any={};
     },
     (err) => {
       
-      alert("Category Name already exists!!");
+      alert("Category Name aldready exists!!");
     }
     );
      
