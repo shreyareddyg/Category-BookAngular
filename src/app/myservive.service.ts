@@ -13,6 +13,11 @@ cat : Category[];
     //const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
     return this.httpService.get<Category>("http://localhost:8765/bookstore/GetAllCategory");
   }
+  public getCategoryByID(id:number){
+    console.log("in service getCategory()");
+    //const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
+    return this.httpService.get<Book>("http://localhost:8765/bookstore/categoryID/"+id);
+  }
 id:number;
  // updateCat:Category;
   public updateCategory(categoryId: number) {

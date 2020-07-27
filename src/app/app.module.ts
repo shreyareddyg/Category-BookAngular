@@ -13,6 +13,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CreatecategoryComponent } from './createcategory/createcategory.component';
 import { OrderByNamePipe } from './order-by-name.pipe';
+import { UserheaderComponent } from './userheader/userheader.component';
+import { BooksByCategoryComponent } from './books-by-category/books-by-category.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { OrderByNamePipe } from './order-by-name.pipe';
     HeaderComponent,
     FooterComponent,
     CreatecategoryComponent,
-    OrderByNamePipe
+    OrderByNamePipe,
+    UserheaderComponent,
+    BooksByCategoryComponent
   
   ],
   imports: [
